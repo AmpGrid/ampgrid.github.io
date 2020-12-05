@@ -1,0 +1,53 @@
+Building and Uploading Your Sphinx Docs to pypi
+***********************************************
+
+Building sphinx-build directly
+==============================
+
+First, create a ``doc`` directory at the root level and ``cd`` into that
+directory. 
+
+Sphinx's quick start program will give you an option to make Makefile and 
+a Windows .bat file.  Personally, I find it easier just to call sphinx-build
+directly.  
+
+On linux::
+
+	$ /usr/bin/sphinx-build -b -E html source build\html
+
+On windows::
+
+	$ C:\Python26\scripts\sphinx-build.exe -b -E html source build\html
+
+.. note::
+
+   The ``-E`` flag forces sphinx to always reread the files. 
+   
+
+
+Building pdf document
+=====================
+
+To date, I've only built the pdf on a windows system.  
+
+On Windows, first you need to grab and install MiTek from http://miktex.org/
+which is used to convert tex to pdf. 
+
+On windows you would run a script like this from the ``doc`` directory::
+	
+	C:\Python26\scripts\sphinx-build.exe -b latex source build\pdf
+	texify --clean --pdf build\pdf\an_example_pypi_project.tex
+
+.. only:: html 
+   
+   Here is the pdf :download:`An Example Pypi Project<docs/an_example_pypi_project.pdf>`.
+
+	 
+.. note:: 
+
+   When using the pdf option, you often use the ``.. only:: html`` directive.
+   
+   For example, the download link for the pdf does not make sense to be in the
+   pdf itself, so you use:
+   
+   ``:download:`An Example Pypi Project<docs/an_example_pypi_project.pdf>```

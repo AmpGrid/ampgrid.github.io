@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Building and Uploading Your Sphinx Docs to pypi &#8212; ampgrid 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="author" title="About these documents" href="#" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to ampgrid’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="building-and-uploading-your-sphinx-docs-to-pypi">
+<h1>Building and Uploading Your Sphinx Docs to pypi<a class="headerlink" href="#building-and-uploading-your-sphinx-docs-to-pypi" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="building-sphinx-build-directly">
+<h2>Building sphinx-build directly<a class="headerlink" href="#building-sphinx-build-directly" title="Permalink to this headline">¶</a></h2>
+<p>First, create a <code class="docutils literal notranslate"><span class="pre">doc</span></code> directory at the root level and <code class="docutils literal notranslate"><span class="pre">cd</span></code> into that
+directory.</p>
+<p>Sphinx’s quick start program will give you an option to make Makefile and
+a Windows .bat file.  Personally, I find it easier just to call sphinx-build
+directly.</p>
+<p>On linux:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ /usr/bin/sphinx-build -b -E html source build\html
+</pre></div>
+</div>
+<p>On windows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ C:\Python26\scripts\sphinx-build.exe -b -E html source build\html
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">-E</span></code> flag forces sphinx to always reread the files.</p>
+</div>
+</div>
+<div class="section" id="building-pdf-document">
+<h2>Building pdf document<a class="headerlink" href="#building-pdf-document" title="Permalink to this headline">¶</a></h2>
+<p>To date, I’ve only built the pdf on a windows system.</p>
+<p>On Windows, first you need to grab and install MiTek from <a class="reference external" href="http://miktex.org/">http://miktex.org/</a>
+which is used to convert tex to pdf.</p>
+<p>On windows you would run a script like this from the <code class="docutils literal notranslate"><span class="pre">doc</span></code> directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Python26</span>\<span class="n">scripts</span>\<span class="n">sphinx</span><span class="o">-</span><span class="n">build</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">b</span> <span class="n">latex</span> <span class="n">source</span> <span class="n">build</span>\<span class="n">pdf</span>
+<span class="n">texify</span> <span class="o">--</span><span class="n">clean</span> <span class="o">--</span><span class="n">pdf</span> <span class="n">build</span>\<span class="n">pdf</span>\<span class="n">an_example_pypi_project</span><span class="o">.</span><span class="n">tex</span>
+</pre></div>
+</div>
+<p>Here is the pdf <code class="xref download docutils literal notranslate"><span class="pre">An</span> <span class="pre">Example</span> <span class="pre">Pypi</span> <span class="pre">Project</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using the pdf option, you often use the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">only::</span> <span class="pre">html</span></code> directive.</p>
+<p>For example, the download link for the pdf does not make sense to be in the
+pdf itself, so you use:</p>
+<p><code class="docutils literal notranslate"><span class="pre">:download:`An</span> <span class="pre">Example</span> <span class="pre">Pypi</span> <span class="pre">Project&lt;docs/an_example_pypi_project.pdf&gt;`</span></code></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">ampgrid</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Building and Uploading Your Sphinx Docs to pypi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#building-sphinx-build-directly">Building sphinx-build directly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-pdf-document">Building pdf document</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to ampgrid’s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, AmpGrid (https://ampgrid.io).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/about.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

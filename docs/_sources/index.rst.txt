@@ -10,6 +10,8 @@ Welcome to ampgrid's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   cs/index
+
 
 
 Indices and tables
